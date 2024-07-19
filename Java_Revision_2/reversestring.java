@@ -2,6 +2,9 @@ class Demo {
     public static void main(String[] args) {
         String str = "prasad";
         System.out.println(reverse(str));
+
+        StringBuffer st = new StringBuffer(str);
+        System.out.println(st.reverse());
     }
 
     static String reverse(String str) {
