@@ -8,7 +8,7 @@ class Node {
     }
 }
 
-class LinkedList {
+class MyLinkedList {
 
     Node head = null;
 
@@ -94,21 +94,22 @@ class LinkedList {
         }
         Node left = head;
 
-        int cureent = 1;
+        for (int i = 1; i <= nodeCount() / 2; i++) {
 
-        while (cureent <= nodeCount() / 2) {
-            Node rigth = head;
+            Node right = head;
 
-            for (int i = 1; i <= nodeCount() - cureent; i++) {
-                rigth = rigth.next;
+            for (int j = i + 1; j <= nodeCount(); j++) {
+                right = right.next;
+
             }
 
-            int temp = rigth.data;
-            rigth.data = left.data;
+            int temp = right.data;
+            right.data = left.data;
             left.data = temp;
+
             left = left.next;
-            cureent++;
         }
+
     }
 
     void reverseOnPlace() {
@@ -126,26 +127,81 @@ class LinkedList {
         head = pri;
     }
 
+    void findMidel() {
+        Node temp = head;
+
+        int count = 1;
+
+        while (count <= nodeCount() / 2) {
+            temp = temp.next;
+            count++;
+        }
+
+        System.out.println(temp.data);
+    }
+
+    void findMidelByTwoPointer() {
+        Node slow = head;
+        Node fast = head.next;
+
+        while (fast != null) {
+
+            fast = fast.next;
+            if (fast != null) {
+                fast = fast.next;
+                slow = slow.next;
+            }
+        }
+
+        System.out.println(slow.data);
+
+    }
+
+    void removeDuplicateFromSortedLl() {
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            if (temp.data == temp.next.data) {
+                temp.next = temp.next.next;
+            } else {
+                temp = temp.next;
+            }
+        }
+
+    }
+
 }
 
 public class P8 {
 
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
+        MyLinkedList ll = new MyLinkedList();
 
         ll.addFirst(10);
-        ll.addFirst(20);
+        ll.addFirst(10);
+        ll.addFirst(10);
+        ll.addLats(20);
+        ll.addLats(20);
+        ll.addLats(20);
+        ll.addLats(20);
+        ll.addLats(20);
         ll.addLats(20);
         ll.addLats(30);
+        ll.addLats(40);
         ll.addLats(50);
-        ll.addAtPosition(6, 250);
+        ll.addLats(50);
+        ll.addLats(50);
+        // ll.addAtPosition(6, 250);
         System.err.println(ll.nodeCount());
-        ll.deletePos(2);
         System.err.println(ll.nodeCount());
         ll.printLl();
-        ll.reverseOnPlace();
+        // ll.reverseOnPlace();
         ll.printLl();
-        //ll.reverse();
+        ll.reverse();
+        ll.printLl();
+        ll.findMidelByTwoPointer();
+        ll.removeDuplicateFromSortedLl();
         ll.printLl();
     }
 }
