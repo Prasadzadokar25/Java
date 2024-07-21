@@ -1,3 +1,6 @@
+import java.util.concurrent.*;
+
+
 class MyThread extends Thread {
 
     public void run() {
@@ -15,8 +18,13 @@ class Main {
 
         MyThread myThread = new MyThread();
         myThread.start();
-        for (int i = 0; i <= 1000000000; i++) {
+        for (int i = 0; i <= 10; i++) {
             System.out.println("0");
         }
+
+        ExecutorService ser= Executors.newFixedThreadPool(5);
+        ExecutorService ser2 = Executors.newCachedThreadPool();
+        ExecutorService ser3 = Executors.newSingleThreadExecutor();
+
     }
 }
