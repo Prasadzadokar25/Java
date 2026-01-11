@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloServlet extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.getWriter().println("Hello from Servlet");
+        response.getWriter().println("Hello from Servlet prasad");
     }
 
 }
