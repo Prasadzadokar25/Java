@@ -19,4 +19,15 @@
         <servlet-name>MyServlet</servlet-name>
         <url-pattern>/myservlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletLifyCycleDemo</servlet-name>
+        <servlet-class>pdevelopment.ServletLifyCycleDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletLifyCycleDemo</servlet-name>
+        <url-pattern>/servletlifecycle</url-pattern>
+    </servlet-mapping>
+
 </web-app>
+
