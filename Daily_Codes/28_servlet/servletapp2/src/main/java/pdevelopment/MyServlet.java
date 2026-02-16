@@ -10,6 +10,6 @@ public class MyServlet extends HttpServlet {
 
     @Override
     public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.getWriter().println("My first templet");
+        response.getWriter().println("My first templet demo");
     }
 }
