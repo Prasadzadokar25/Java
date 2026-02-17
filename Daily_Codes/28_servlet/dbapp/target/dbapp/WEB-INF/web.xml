@@ -1,0 +1,13 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         version="4.0">
+
+
+<servlet>
+  <servlet-name>Read Users</servlet-name>
+  <servlet-class>pdevelopment.controller.UserServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>Read Users</servlet-name>
+  <url-pattern>/users</url-pattern>
+</servlet-mapping>
+</web-app>
