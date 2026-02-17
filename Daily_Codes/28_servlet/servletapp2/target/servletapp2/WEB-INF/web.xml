@@ -28,6 +28,14 @@
         <servlet-name>ServletLifyCycleDemo</servlet-name>
         <url-pattern>/servletlifecycle</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ReadingRequestParameters</servlet-name>
+        <servlet-class>pdevelopment.ReadingRequestParameter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReadingRequestParameters</servlet-name>
+        <url-pattern>/readingrequestparameters</url-pattern>
+    </servlet-mapping>
 
 </web-app>
 
